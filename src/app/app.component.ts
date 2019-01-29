@@ -1,10 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SignalRService } from './services/signal-r.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'angular-tour-of-heroes';
+export class AppComponent implements OnInit{
+  title = 'Tour of Heroes';
+
+  constructor(public signalRService: SignalRService, private http: HttpClient) { }
+
+  ngOnInit() {
+    this.signalRService.startConnection();
+    this.signalRService.addTransferChartDataListener();
+    this.startHttpRequest();
+  }
+
+  private startHttpRequest = () => {
+    this.http.get('https://localhost:5001/api/heroes')
+      .subscribe(res => {
+        console.log(res);
+      })
+  }
+
+
 }

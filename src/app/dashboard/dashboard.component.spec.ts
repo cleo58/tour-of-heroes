@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
 import { Http, HttpModule } from '@angular/http';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { By } from '@angular/platform-browser';
-import { MessagesService } from '../messages.service';
+import { MessagesService } from '../message.service';
 
 const routerSpy = jasmine.createSpyObj('Router', ['navigateByUrl']);
 const heroServiceSpy = jasmine.createSpyObj('HeroService', ['getHeroes']);

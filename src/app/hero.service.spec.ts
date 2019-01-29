@@ -8,7 +8,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
-import { MessagesService } from './messages.service';
+import { MessagesService } from './message.service';
 import { Hero } from './hero';
 
 describe('HeroService', () => {

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MessagesService } from './messages.service';
+import { MessagesService } from './message.service';
 
 describe('MessagesService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
